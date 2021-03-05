@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+@import "/normalize.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --naranja: rgb(245, 161, 82);
+  --blanco: white;
+  --negro: black;
+  --gris: rgb(192, 189, 189);
+  font-size: 16px;
+  width: 100vw;
+}
+
+img {
+  width: 100%;
+}
+
+/* General */
+
+h1,
+h2 {
+  color: var(--blanco);
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+body {
+  background: var(--naranja);
+  font-family: Roboto, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+main > *,
+body > header {
+  padding: 2rem;
+}
+
+main > section {
+  padding-bottom: 2rem;
+}
+
+button {
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 0.5rem 2rem;
+  width: 10rem;
+  margin-top: 1rem;
+  border: 0;
+}
+
+/* Header */
+body > header {
+  background-image: url(/img/cabeceira.jpg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body > header nav ul {
+  list-style: none;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+body > header nav ul li {
+  text-align: center;
+  margin: 0 0.5rem;
+}
+
+body > header nav ul li a {
+  color: var(--negro);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Seccion vacas*/
+section#vacas ul {
+  list-style: none;
+}
+
+section#vacas article {
+  background: var(--negro);
+  color: var(--blanco);
+  margin-bottom: 1rem;
+  border: 1px solid var(--negro);
+}
+
+section#vacas article img {
+  height: 20rem;
+  object-fit: cover;
+}
+
+section#vacas article h1 {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+section#vacas article p {
+  padding: 1rem;
+}
+
+section#vacas article a {
+  background: var(--gris);
+  color: var(--negro);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+
+/* Formulario */
+section#formulario {
+  background: var(--blanco);
+  max-width: 100%;
+}
+
+section#formulario h2 {
+  color: var(--naranja);
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+section#formulario form fieldset {
+  border: 0;
+  padding-left: 0;
+}
+
+section#formulario form input:not([type="checkbox"]),
+section#formulario form select,
+section#formulario form textarea {
+  background: var(--naranja);
+  border: 2px solid var(--negro);
+  width: 100%;
+  padding: 0.5rem;
+}
+
+section#formulario form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+section#formulario form fieldset:last-of-type label {
+  display: initial;
+}
+
+section#formulario form fieldset:last-of-type input {
+  vertical-align: middle;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+
+  /* Header */
+  body > header {
+    flex-direction: row;
+    align-items: baseline;
+    min-height: 30rem;
+    background-position: center;
+  }
+
+  body > header > * {
+    flex-basis: calc(100% / 3);
+  }
+
+  body > header nav {
+    order: -1;
+  }
+
+  body > header h1 {
+    text-align: center;
+  }
+
+  body > header div {
+    text-align: right;
+  }
+
+  /* intro */
+  section#intro p {
+    columns: 2;
+    margin-top: 1rem;
+  }
+
+  /* vacas */
+
+  section#vacas {
+    padding: 1rem;
+  }
+  section#vacas ul {
+    display: flex;
+  }
+
+  section#vacas ul li {
+    flex-basis: calc(100% / 3);
+    margin: 0 0.5rem;
+  }
+
+  section#vacas ul li article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  section#vacas ul li article header img {
+    height: 15rem;
+  }
+
+  section#vacas ul li article section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* formulario */
+
+  section#formulario h2 {
+    max-width: 35rem;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  section#formulario form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  section#formulario form fieldset {
+    flex-basis: 50%;
+  }
+
+  section#formulario form fieldset.ancho {
+    flex-basis: 100%;
+  }
+}
